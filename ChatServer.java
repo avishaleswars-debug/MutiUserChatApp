@@ -1,13 +1,18 @@
+//import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
 
 public class ChatServer {
-
+ static ArrayList<ClientHandler> arr=new ArrayList<>();
     public static void main(String[] args)throws Exception{
-        ArrayList<Socket> arr=new ArrayList<>();
-        ServerSocket server=new ServerSocket();
+      
+        ServerSocket server=new ServerSocket(9999);
+        while(true){
 Socket socket=server.accept();
-arr.add(socket);
+ClientHandler client =new ClientHandler(socket);
+arr.add(client);
+       new Thread(client).start();
+    }
 
     }
 }
