@@ -6,7 +6,7 @@ public class ClientHandler implements Runnable {
     private Socket socket;
     private DataInputStream di;
     private DataOutputStream dos;
-        String name;
+      private  String name;
    
     ClientHandler(Socket socket){
         this.socket=socket;
@@ -28,15 +28,11 @@ while (true) {
     String line=di.readUTF();
     for (ClientHandler s : ChatServer.arr) {
         s.dos.writeUTF(name+" "+line);
+    }  
     }
-        
-    }
-
             }
             catch(Exception e) {
                System.out.println(name + " disconnected");
-            }
-        
+            }    
 }
-
 }
