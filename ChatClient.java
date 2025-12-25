@@ -9,6 +9,9 @@ public class ChatClient {
           DataOutputStream ds=new DataOutputStream(s.getOutputStream());
                 DataInputStream io=new DataInputStream(s.getInputStream());
                 Scanner sc=new Scanner(System.in);
+                System.out.println("enter the name");
+                String name =sc.nextLine();
+                ds.writeUTF(name);
                new Thread(()->{try {while (true) {
                     
 String li=io.readUTF();
