@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class ChatClient {
     public static void main(String[] args)throws IOException {
-        Socket s=new Socket("localhost",9999);
+Socket s = new Socket("2409:408d:3cb9:dc0f:c881:cd72:5168:7efd", 9999);
           DataOutputStream ds=new DataOutputStream(s.getOutputStream());
                 DataInputStream io=new DataInputStream(s.getInputStream());
                 Scanner sc=new Scanner(System.in);
