@@ -15,7 +15,7 @@ public class ChatClient {
                new Thread(()->{try {while (true) {
                     
 String li=io.readUTF();
-System.out.println(li);
+      System.out.println(li);
                }
             }
                catch(Exception e){
